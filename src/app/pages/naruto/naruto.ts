@@ -1,0 +1,40 @@
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-naruto',
+  standalone: true,
+  imports: [RouterModule, CommonModule],
+  templateUrl: './naruto.html',
+  styleUrl: './naruto.css',
+})
+export class Naruto {
+
+  title = "Naruto";
+  images = [
+    "./images/Naruto/1.jpg", 
+    "./images/Naruto/2.jpg", 
+    "./images/Naruto/3.jpg",
+    "./images/Naruto/4.jpg",
+    "./images/Naruto/5.jpg",
+    "./images/Naruto/6.jpg",
+    "./images/Naruto/7.jpg",
+    "./images/Naruto/8.jpg",
+    "./images/Naruto/9.jpg",
+    "./images/Naruto/10.jpg"
+  ];
+
+  // 1. Add this variable to track the clicked image
+  selectedImage: string | null = null;
+
+  // 2. Add these functions to open and close it
+  openLightbox(img: string) {
+    this.selectedImage = img;
+  }
+
+  closeLightbox() {
+    this.selectedImage = null;
+  }
+}
+

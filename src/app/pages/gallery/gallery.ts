@@ -88,7 +88,7 @@ export class Gallery {
     { title: 'Naruto Shippuden', 
       genre: 'Action', 
       image: './images/Naruto.jpg', 
-      pageRoute: "/naruto-shippuden" 
+      pageRoute: "/naruto" 
     },
 
     { title: 'One Piece', 

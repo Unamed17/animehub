@@ -9,6 +9,10 @@ import { DemonSlayer } from './pages/demon-slayer/demon-slayer';
 import { Haikyu } from './pages/haikyu/haikyu';
 import { HunterXHunter } from './pages/hunter-x-hunter/hunter-x-hunter';
 import { Jjk } from './pages/jjk/jjk';
+import { MyHeroAcademia } from './pages/my-hero-academia/my-hero-academia';
+import { Naruto } from './pages/naruto/naruto';
+import { OnePiece } from './pages/one-piece/one-piece';
+import { SoloLeveling } from './pages/solo-leveling/solo-leveling';
 
 
 
@@ -31,5 +35,9 @@ export const routes: Routes = [
     {path: 'haikyu', component: Haikyu },
     {path: 'hunter-x-hunter', component: HunterXHunter },
     {path: 'jjk', component: Jjk },
+    {path: 'my-hero-academia', component: MyHeroAcademia },
+    {path: 'naruto', component: Naruto },
+    {path: 'one-piece', component: OnePiece },
+    {path: 'solo-leveling', component: SoloLeveling}
  
 ];
