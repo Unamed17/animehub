@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
+  padding: 1rem 1.5rem; /* Tighter mobile padding */
   background: rgba(26, 26, 28, 0.95);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -29,201 +29,6 @@
   transform: translateY(-100%);
 }
 
-.nav-btn {
-  background: transparent;
-  color: white;
-  border: none;
-  font-size: 0.95rem;
-  cursor: pointer;
-  margin-left: 1rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  transition: all 0.3s;
-}
-
-.nav-btn:hover {
-  color: #ff7e5f;
-}
-
-.outline-nav {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.outline-nav:hover {
-  border-color: #ff7e5f;
-  background: rgba(255, 126, 95, 0.1);
-}
-
-/* --- Active Page Highlight --- */
-.active-nav {
-  background: rgba(255, 126, 95, 0.15); /* A soft orange background glow */
-  border: 1px solid #ff7e5f;            /* Solid brand orange border */
-  color: #ff7e5f;                       /* Orange text and icon */
-  cursor: default;                      /* Standard pointer since they are already here */
-}
-
-/* Keeps it highlighted even if they hover over it */
-.active-nav:hover {
-  background: rgba(255, 126, 95, 0.15);
-  border-color: #ff7e5f;
-  color: #ff7e5f;
-}
-
-/* --- Hero Section & Typography --- */
-.hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8rem 4rem 4rem 4rem; /* Top padding clears the fixed navbar */
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-.hero-content {
-  flex: 1;
-  color: white;
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
-}
-
-/* --- CTA Buttons --- */
-.cta-buttons {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.btn-explore {
-  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-  color: white;
-  border: none;
-  padding: 1rem 2.5rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.btn-explore:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
-}
-
-.btn-start {
-  background: transparent;
-  color: white;
-  border: 2px solid #00d2ff;
-  padding: 1rem 2.5rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-start:hover {
-  background: rgba(0, 210, 255, 0.1);
-  transform: translateY(-3px);
-}
-
-/* --- Slideshow Graphics --- */
-.hero-graphics {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.slideshow-container {
-  width: 100%;
-  max-width: 650px;
-  height: 380px;
-  overflow: hidden;
-  border-radius: 24px;
-  position: relative;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-  margin-bottom: 2rem;
-  border: 2px solid rgba(255,255,255,0.1);
-}
-
-.slide-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slideshow-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.slide-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.2);
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s;
-  backdrop-filter: blur(5px);
-}
-
-.slide-btn:hover {
-  background: rgba(0, 210, 255, 0.8);
-  border-color: transparent;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.prev { left: 15px; }
-.next { right: 15px; }
-
-/* The Pink-to-Orange Seasonal Button */
-.btn-seasonal-large {
-  background: linear-gradient(90deg, #f5317f, #ff7c14); 
-  color: white;
-  border: none;
-  padding: 1.2rem 4rem;
-  border-radius: 40px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(245, 49, 127, 0.4);
-  transition: transform 0.3s;
-}
-
-.btn-seasonal-large:hover {
-  transform: translateY(-4px);
-}
-
-/* =========================================
-   NAVBAR SPECIFIC STYLES (HOME PAGE)
-   ========================================= */
-
 /* --- Brand Logo --- */
 .brand {
   cursor: pointer;
@@ -235,15 +40,15 @@
 .logo-box {
   background: #ff7e5f;
   color: white;
-  padding: 2px 10px;
+  padding: 2px 8px;
   border-radius: 6px;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 4rem; /* Mobile-friendly size */
 }
 
 .brand-text {
   color: #ff7e5f;
-  font-size: 4rem;
+  font-size: 4rem; /* Mobile-friendly size */
   font-weight: bold;
 }
 
@@ -253,9 +58,27 @@
   align-items: center;
 }
 
-.user-greeting {
+.nav-btn {
+  background: transparent;
   color: white;
-  margin: 0 1.5rem;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.active-nav {
+  background: rgba(255, 126, 95, 0.15);
+  border: 1px solid #ff7e5f;
+  color: #ff7e5f;
+}
+
+.user-greeting {
+  display: none; /* Hidden on mobile to save space */
+  color: white;
+  margin: 0 1rem;
   font-size: 0.95rem;
 }
 
@@ -264,26 +87,135 @@
   font-weight: bold;
 }
 
-/* --- Custom Logout Button --- */
-.logout-btn {
-  border-color: #ff4d4d !important;
-  color: #ff4d4d !important;
+/* --- Hero Section (MOBILE FIRST) --- */
+.hero-section {
+  display: flex;
+  flex-direction: column; /* Stacked by default */
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7rem 1.5rem 3rem 1.5rem;
+  min-height: 100vh;
+  gap: 2.5rem; /* Gap between content and slideshow */
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.logout-btn:hover {
-  background: rgba(255, 77, 77, 0.1) !important;
-  color: #ff4d4d !important;
-  border-color: #ff4d4d !important;
+.hero-content {
+  width: 100%;
+  z-index: 2;
 }
 
-/* =========================================
-   HAMBURGER & DROPDOWN MENU
-   ========================================= */
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: white;
+}
 
+.hero-content p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons on mobile */
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.btn-explore, .btn-start {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-explore {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  color: white;
+  border: none;
+}
+
+.btn-start {
+  background: transparent;
+  color: white;
+  border: 2px solid #00d2ff;
+}
+
+/* --- Slideshow Graphics (MOBILE) --- */
+.hero-graphics {
+  width: 100%;
+  max-width: 100%;
+}
+
+.slideshow-container {
+  /* This margin helps position it vertically like your landing page */
+  margin-top: 130px; 
+  
+  position: relative; 
+  width: 100%;
+  max-width: 550px;     /* Matches landing.css */
+  max-height: 420px;    /* Matches landing.css */
+  aspect-ratio: 16 / 9; /* Matches landing.css */
+  
+  border-radius: 20px;  /* Exact curve from landing */
+  overflow: hidden; 
+  
+  /* Copying the exact shadow and border for the same glow */
+  box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 40px rgba(255, 145, 77, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 2rem;
+}
+
+.slide-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+/* Ensure images fill the container without distortion */
+.slideshow-image {
+  min-width: 100%; 
+  height: 100%;
+  object-fit: cover; 
+}
+
+@media screen and (max-width: 768px) {
+  .slideshow-container {
+    height: auto; /* Allow aspect-ratio to handle mobile height */
+    max-width: 100%;
+  }
+}
+
+/* --- Slideshow Buttons --- */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* --- HAMBURGER MENU --- */
 .hamburger-container {
   position: relative;
-  display: flex;
-  align-items: center;
   margin-left: 0.5rem;
 }
 
@@ -291,67 +223,72 @@
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
-  padding: 0.5rem;
-}
-
-.hamburger-icon:hover {
-  color: #ff7e5f;
-  transform: scale(1.1);
 }
 
 .dropdown-menu {
   position: absolute;
   top: 150%;
   right: 0;
-  background: rgba(26, 26, 28, 0.95);
-  backdrop-filter: blur(15px);
+  background: rgba(26, 26, 28, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   min-width: 180px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-  overflow: hidden;
   z-index: 1001;
   display: flex;
   flex-direction: column;
-  animation: slideDown 0.2s ease-out forwards;
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .dropdown-item {
   background: transparent;
   border: none;
   color: white;
-  padding: 1rem 1.2rem;
+  padding: 1rem;
   text-align: left;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
-.dropdown-item:hover {
-  background: rgba(255, 126, 95, 0.15);
-  color: #ff7e5f;
-}
+.logout-text { color: #ff4d4d; }
 
-.dropdown-divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0;
-}
+/* =========================================
+   DESKTOP STYLES (Wider than 1024px)
+   ========================================= */
+@media screen and (min-width: 1024px) {
+  .navbar {
+    padding: 1.2rem 4rem;
+  }
 
-.logout-text {
-  color: #ff4d4d;
-}
+  .logo-box, .brand-text {
+    font-size: 4rem;
+  }
 
-.logout-text:hover {
-  background: rgba(255, 77, 77, 0.15);
-  color: #ff4d4d;
+  .user-greeting {
+    display: inline-block; /* Show greeting on desktop */
+  }
+
+  .hero-section {
+    flex-direction: row; /* Side-by-side layout */
+    text-align: left;
+    padding: 0 10%;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3.3rem;
+  }
+
+  .cta-buttons {
+    flex-direction: row; /* Horizontal buttons */
+    justify-content: flex-start;
+  }
+
+  .btn-explore, .btn-start {
+    width: auto;
+    padding: 1rem 2.5rem;
+  }
+
+  
 }
