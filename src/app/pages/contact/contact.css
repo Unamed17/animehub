@@ -1,0 +1,235 @@
+/* =========================================
+   FULL PAGE SETUP
+   ========================================= */
+.contact-wrapper {
+  background: #1a1a1c url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: rgba(26, 26, 28, 0.6);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.back-btn:hover {
+  color: #ff914d;
+  border-color: #ff914d;
+  background: rgba(26, 26, 28, 0.9);
+}
+
+/* =========================================
+   THE SPLIT GLASS CARD
+   ========================================= */
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Makes the form side slightly wider */
+  background: rgba(20, 20, 22, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Keeps the inner sections inside the rounded corners */
+}
+
+/* --- Left Side: Info --- */
+.contact-info {
+  background: linear-gradient(180deg, rgba(255, 145, 77, 0.05), rgba(0,0,0,0.2));
+  padding: 3rem;
+  color: white;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem; /* Increased from 1.5rem */
+  padding: 8px 20px; /* Slightly wider padding to match the new height */
+  border-radius: 10px;
+  /*add my own logo here*/
+}
+
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ff914d;
+}
+
+.contact-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.info-text {
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.detail-item i {
+  color: #ff914d;
+  font-size: 1.3rem;
+  width: 25px;
+}
+
+.social-links {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links i {
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links i:hover {
+  color: #ff914d;
+  transform: translateY(-3px);
+}
+
+/* --- Right Side: Form --- */
+.contact-form-section {
+  padding: 3rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem; /* Adjusted for standard inputs */
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.input-group input, 
+.input-group textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Inputs get left padding for the icon, textarea doesn't need an icon */
+.input-group input {
+  padding: 1rem 1rem 1rem 3rem; 
+}
+
+.input-group textarea {
+  padding: 1rem;
+  resize: vertical; /* Allows the user to drag the box taller if they want */
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  border-color: #ff914d;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(255, 145, 77, 0.2);
+}
+
+.input-group input:focus + .input-icon, 
+.input-group input:not(:placeholder-shown) + .input-icon {
+  color: #ff914d;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(90deg, #e52e71, #ff8a00);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(229, 46, 113, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(229, 46, 113, 0.5);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 850px) {
+  .contact-wrapper {
+    padding: 5rem 1rem 2rem 1rem; /* Extra top padding so it clears the back button */
+  }
+
+  .back-btn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    z-index: 10;
+  }
+
+  /* Stack the grid on top of each other! */
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+  }
+
+  .contact-form-section {
+    padding: 2rem;
+  }
+}

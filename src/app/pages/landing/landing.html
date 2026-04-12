@@ -1,0 +1,114 @@
+<div class="app-background">
+  
+  <header class="navbar" [class.navbar-hidden]="isNavbarHidden">
+    
+    <div class="brand" (click)="scrollToTop()">
+      <span class="logo-box">A</span>
+      <span class="brand-text">nimeHub</span>
+    </div>
+
+    <button class="mobile-toggle-btn" (click)="toggleMobileMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav-links" [class.mobile-active]="isMobileMenuOpen">
+      <button class="nav-btn outline-nav" [routerLink]="['/contact']" (click)="isMobileMenuOpen = false">
+        <i class="fas fa-comment-dots"></i> Contact
+      </button>
+      <button class="nav-btn outline-nav" [routerLink]="['/about']" (click)="isMobileMenuOpen = false">
+        <i class="fas fa-info-circle"></i> About
+      </button>
+      <button class="nav-btn outline-nav login-btn" [routerLink]="['/login']" (click)="isMobileMenuOpen = false">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+    </nav>
+    
+  </header>
+
+  <main class="hero-section">
+    <div class="hero-content">
+      <h1>Your Ultimate Anime<br>Universe Awaits.</h1>
+      <p>The ultimate visual hub for anime <br> enthusiasts everywhere.</p>
+      
+      <div class="cta-buttons">
+        <button class="btn-explore" [routerLink]="['/gallery']">EXPLORE NOW</button>
+        <button class="btn-start" [routerLink]="['/login']">GET STARTED</button>
+    </div>
+    </div> 
+    
+    <div class="hero-graphics">
+       <div class="slideshow-container">
+          
+          <div class="slide-track" [style.transform]="'translateX(-' + (currentImageIndex * 100) + '%)'">
+            <img *ngFor="let img of animeImages" [src]="img" alt="Trending Anime" class="slideshow-image">
+          </div>
+          
+          <button class="slide-btn prev" (click)="prevSlide()">&lt;</button>
+          <button class="slide-btn next" (click)="nextSlide()">&gt;</button>
+       </div>
+    </div>
+  </main>
+
+  <section class="content-section">
+    <h2>Why Choose AnimeHub?</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h3>Curated Galleries</h3>
+        <p>High-quality images neatly organized by your favorite anime titles.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Real-Time Data</h3>
+        <p>Powered by external APIs to bring you live ratings and descriptions.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Seasonal Trends</h3>
+        <p>Always stay updated with the most popular anime airing this season.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" style="background: rgba(0, 0, 0, 0.6);">
+    <h2 style="font-size: 2.3rem;">What Fans Are Saying</h2>
+    <div class="features-grid">
+      <div class="feature-box" style="border-left: 4px solid #ff7b00;">
+        <p style="font-size: 14px;">"The best place to find reference images for my favorite characters. The seasonal tracker is flawless!"</p>
+        <h4 style="color: #888; margin-top: 1rem;">- Kenji M.</h4>
+      </div>
+      <div class="feature-box" style="border-left: 4px solid #00d2ff;">
+        <p>"I love how clean and visually pleasing the layout is. It's my go-to hub for discovering new shows."</p>
+        <h4 style="color: #888; margin-top: 1rem;">- Sarah T.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Our Story</h2>
+    <p style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1rem; color: #ccc;">
+      AnimeHub started as an academic project with a simple goal: create a centralized, visually stunning gallery for anime enthusiasts. We realized that fans needed a place that wasn't cluttered with streaming links, but focused purely on the art, the characters, and discovering what's trending. Today, it stands as a testament to modern web design and community passion.
+    </p>
+  </section>
+
+  <section class="content-section" style="background: rgba(0, 0, 0, 0.6);">
+    <h2>Our Guarantee to You</h2>
+    <div style="font-size: 4rem; color: #ff914d; margin-bottom: 1rem;">🛡️</div>
+    <h3 style="font-size: 1.7rem;">100% Free</h3>
+    <p style="color: #ccc; max-width: 600px; margin: 1rem auto;">We rely on robust, live APIs so you are guaranteed to see the latest seasonal information without ever having to pay a subscription fee or wait for manual updates.</p>
+  </section>
+
+  <section class="content-section" style="padding-bottom: 8rem;"> 
+    <h2>Ready to Dive In?</h2>
+    <p style="margin-bottom: 2rem; color: #ccc;">Join now and start exploring the galleries.</p>
+    <button class="btn-explore" style="padding: 1rem 3rem; font-size: 1rem;" [routerLink]="['/register']">
+  CREATE FREE ACCOUNT
+</button>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 AnimeHub. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+</div>

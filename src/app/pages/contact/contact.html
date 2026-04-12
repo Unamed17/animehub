@@ -1,0 +1,66 @@
+<div class="contact-wrapper">
+  
+  <button class="back-btn" (click)="goBack()">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+
+  <div class="contact-card">
+    
+    <div class="contact-info">
+      <div class="brand" (click)="goHome()">
+        <div class="logo-icon">A</div>
+        <span class="brand-text">nimeHub</span>
+      </div>
+      
+      <h2>Get In Touch</h2>
+      <p class="info-text">Have a suggestion, found a bug, or just want to talk about the latest season? Drop us a message!</p>
+      
+      <div class="info-details">
+        <div class="detail-item">
+          <i class="fas fa-envelope"></i>
+          <span>animehub@gmail.com</span>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>AnimeHub HQ, Global Server</span>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-discord"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+
+    <div class="contact-form-section">
+      <form (submit)="onSubmit($event)">
+        
+        <div class="input-group">
+          <i class="fas fa-user input-icon"></i>
+          <input type="text" placeholder="Your Name" required>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-envelope input-icon"></i>
+          <input type="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-tag input-icon"></i>
+          <input type="text" placeholder="Subject" required>
+        </div>
+
+        <div class="input-group">
+          <textarea placeholder="Write your message here..." rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          Send Message <i class="fas fa-paper-plane"></i>
+        </button>
+        
+      </form>
+    </div>
+
+  </div>
+</div>

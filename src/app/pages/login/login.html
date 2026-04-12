@@ -1,0 +1,43 @@
+<div class="auth-wrapper">
+  
+  <button class="back-btn" (click)="goHome()">Back to Home</button>
+
+  <div class="auth-card">
+    
+    <div class="brand-header">
+      <div class="logo-box">A</div>
+      <span class="brand-text">nimeHub</span>
+    </div>
+
+    <h2>Welcome Back!</h2>
+    <p class="subtitle">Sign in to track your favorite anime.</p>
+
+    <form (ngSubmit)="onLogin()">
+      
+      <p class="error-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <div class="input-group">
+        <input type="email" placeholder="Email Address" name="email" [(ngModel)]="loginEmail" required>
+      </div>
+
+      <div class="input-group">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="loginPassword" required>
+      </div>
+
+      <div class="form-options">
+        <label class="remember-label">
+          <input type="checkbox"> Remember me
+        </label>
+        <span class="forgot-link">Forgot Password?</span>
+      </div>
+
+      <button type="submit" class="btn-submit">LOGIN</button>
+
+    </form>
+
+    <div class="switch-prompt">
+      Don't have an account? <span class="highlight-link-cyan" [routerLink]="['/register']">Sign up here</span>
+    </div>
+
+  </div>
+</div>

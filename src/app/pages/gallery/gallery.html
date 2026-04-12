@@ -1,0 +1,54 @@
+<div class="gallery-wrapper">   
+    <div class="gallery-top-bar">
+    
+  <div class="brand-group">
+    <button class="icon-btn" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="brand">
+      <div class="logo-icon">A</div>
+      <span class="brand-text">nimeHub</span>
+    </div>
+  </div>
+    
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" 
+             #searchInput 
+             (input)="filterAnime(searchInput.value)" 
+             class="search-input" 
+             placeholder="Search anime or genre...">
+    </div>
+  </div>
+
+  <div class="gallery-header">
+    <h1 class="clean-title">Explore The Universe</h1>
+    <p class="subtitle">Discover trending series, timeless classics, and stunning artwork.</p>
+  </div>
+
+  <div class="gallery-grid">
+    
+    <div class="anime-card" *ngFor="let anime of filteredAnimeList">
+       <div class="card-image-wrapper">
+         <img [src]="anime.image" [alt]="anime.title" class="anime-poster">
+         <div class="genre-badge">{{ anime.genre }}</div>
+       </div>
+
+       <div class="card-content">
+  <h3>{{ anime.title }}</h3>
+  
+  <button class="btn-view" (click)="viewPictures(anime.pageRoute)">
+    View Pictures
+  </button>
+</div>
+    </div>
+
+  </div>
+
+  <div class="no-results" *ngIf="filteredAnimeList.length === 0">
+    <i class="fas fa-ghost"></i>
+    <h2>No anime found!</h2>
+    <p>Try searching for a different title or genre.</p>
+  </div>
+</div>

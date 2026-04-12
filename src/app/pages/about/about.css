@@ -1,0 +1,238 @@
+/* =========================================
+   FULL PAGE SETUP
+   ========================================= */
+.about-wrapper {
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: rgba(26, 26, 28, 0.6);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.back-btn:hover {
+  color: #ff914d;
+  border-color: #ff914d;
+  background: rgba(26, 26, 28, 0.9);
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1000px; /* MAGIC LINE: This prevents it from stretching too wide */
+  margin: 0 auto 3rem auto; /* Centers the card horizontally and adds space below it */
+  padding: 0rem 0rem;
+}
+
+/* =========================================
+   HEADER SECTION
+   ========================================= */
+/* =========================================
+   NEW HERO BANNER SECTION
+   ========================================= */
+.about-hero-banner {
+  background: rgba(20, 20, 22, 0.5); /* Semi-transparent dark glass */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Centers the "A" and the "AnimeHub" text perfectly */
+.banner-brand {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.banner-brand .logo-icon {
+  background: linear-gradient(135deg, #e52e71, #ff8a00);
+  color: #fff;
+  font-weight: bold;
+  font-size: 3.1rem;
+  padding: 6px 16px;
+  border-radius: 10px;
+}
+
+.banner-brand .brand-text {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ff914d;
+}
+
+/* Replaced the broken gradient block with crisp, bold white text */
+.main-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+}
+
+.about-hero-banner .subtitle {
+  font-size: 1rem;
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =========================================
+   GLASS CARD GRID
+   ========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.glass-card {
+  background: rgba(20, 20, 22, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 145, 77, 0.4);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #ff914d;
+  margin-bottom: 1.5rem;
+}
+
+.glass-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.glass-card p {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #aaa;
+}
+
+.feature-list li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.feature-list i {
+  color: #e52e71;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   FOOTER CTA
+   ========================================= */
+.about-footer {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about-footer p {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+}
+
+.btn-contact {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 2px solid #ff914d;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: #ff914d;
+  box-shadow: 0 0 20px rgba(255, 145, 77, 0.4);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 850px) {
+  .about-wrapper {
+    padding: 2rem 1rem;
+  }
+  
+  .back-btn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .about-container {
+    padding-top: 4rem;
+  }
+
+  .gradient-text {
+    font-size: 2.5rem;
+  }
+
+  .glass-card {
+    padding: 2rem;
+  }
+
+  .about-hero-banner {
+    padding: 2rem 1rem;
+  }
+  
+  .main-title {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="gallery-wrapper">
+
+    <button class="btn-back" [routerLink]="['/gallery']">
+    <i class="fas fa-arrow-left"></i> Back to Galleries
+  </button>
+
+  <div class="gallery-header">
+    <h1 class="anime-title">Demon Slayer</h1>
+    <p class="subtitle">Official Artwork</p>
+  </div>
+
+  <div class="masonry-grid">
+    <div class="masonry-item" *ngFor="let img of images">
+      <img [src]="img" alt="Artwork" (click)="openLightbox(img)" style="cursor: zoom-in;">
+    </div>
+  </div>
+</div>
+
+<div class="lightbox-modal" *ngIf="selectedImage" (click)="closeLightbox()">
+  
+  <span class="close-btn">&times;</span>
+  
+  <img [src]="selectedImage" class="lightbox-content" (click)="$event.stopPropagation()">
+  
+</div>

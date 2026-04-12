@@ -1,0 +1,702 @@
+/* Import a font like Poppins or Montserrat in your styles.css for best results */
+.app-background {
+  background: #1a1a1c url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* CHANGE THIS: from 'hidden' to 'auto' to enable vertical scrolling */
+}
+
+/* Navbar Styles */
+/* Update the Navbar for the Glass/Blur Effect */
+/* Update your existing navbar */
+/* --- The Dashboard Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(26, 26, 28, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+/* 1. THE MISSING LOGO STYLES */
+.brand {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Keeps the A and nimeHub perfectly aligned */
+}
+
+.logo-box {
+  background: #ff7e5f;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+.brand-text {
+  color: #ff7e5f;
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+/* 2. THE FIXED BUTTON SPACING */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* This is the magic rule! It creates perfect, even spacing */
+}
+
+.nav-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-left: 0; /* Removed the old margin */
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  color: #ff7e5f;
+}
+
+.outline-nav {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.outline-nav:hover {
+  border-color: #ff7e5f;
+  background: rgba(255, 126, 95, 0.1);
+}
+
+/* --- Special Login Button Styling --- */
+.login-btn {
+  background: #ff7e5f; 
+  color: white;
+  border-color: #ff7e5f;
+  font-weight: bold;
+  margin-left: 0rem; /* Just one tiny bump to separate it from About */
+}
+
+.login-btn:hover {
+  background: transparent;
+  color: #ff7e5f;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex: 1;
+  padding: 2rem 4rem;
+  position: relative;
+  padding-top: 100px;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  padding-top: 0rem;
+}
+
+.hero-content p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+}
+
+/* Call to Action Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 3.5rem;
+  margin-bottom: 5rem;
+}
+
+.btn-explore {
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #00d2ff);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(229, 46, 113, 0.4);
+  transition: transform 0.2s;
+}
+
+.btn-explore:hover {
+  transform: scale(1.05);
+}
+
+.btn-start {
+  background-color: #1a1a1c;
+  color: white;
+  border: 2px solid #00d2ff;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: inset 0 0 10px rgba(0, 210, 255, 0.2), 0 0 10px rgba(0, 210, 255, 0.3);
+  transition: all 0.3s;
+}
+
+.btn-start:hover {
+  background-color: rgba(0, 210, 255, 0.1);
+}
+
+/* Hero Graphics (Right Side) */
+.hero-graphics {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the button under the slider */
+  gap: 0rem;         /* Space between the slider and the button */
+  
+  /* THE SAFE NUDGE: Moves the whole block without breaking the layout */
+  position: relative;
+  top: -80px;  /* Moves it UP (Change to -60px if you want it higher) */
+  left: 0px;  /* Moves it RIGHT (Change to 60px if you want it further right) */
+}
+
+/* The box holding the image */
+/* Update the container for deeper shadows */
+.slideshow-container {
+    margin-top: 230px;
+  position: relative; /* CRITICAL: Allows the buttons to sit exactly inside the box */
+  width: 100%;
+  max-width: 550px;
+  max-height: 420px;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden; 
+  /* ENHANCED SHADOW: Deeper black drop shadow + an orange glow */
+  box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 40px rgba(255, 145, 77, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 2rem;
+}
+
+/* NEW: The track that lines up the images horizontally */
+.slide-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* This is the magic line that creates the smooth sliding motion! */
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+/* Update the image to fit the new track system */
+.slideshow-image {
+  min-width: 100%; /* Forces each image to be exactly as wide as the container */
+  height: 100%;
+  object-fit: cover; 
+  /* (Make sure you delete the old 'animation: fadeEffect...' line from here) */
+}
+
+/* You can also delete the old @keyframes fadeEffect block entirely! */
+
+@keyframes fadeEffect {
+  /* Added a slight zoom-out effect when the image appears */
+  from { opacity: 0.5; transform: scale(1.03); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* NEW: Styles for the manual buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: rgba(26, 26, 28, 0.6);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slide-btn:hover {
+  background-color: #ff914d;
+  color: #1a1a1c;
+  box-shadow: 0 0 15px rgba(255, 145, 77, 0.6);
+  border-color: #ff914d;
+  transform: translateY(-50%) scale(1.1); /* Slightly enlarges on hover */
+}
+
+/* Position them on the edges */
+.prev { left: 15px; }
+.next { right: 15px; }
+
+
+
+/* 3. Add styles for the new scrolling sections */
+.content-section {
+  margin-top: 20px;
+  padding: 3.5rem 4rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(26, 26, 28, 0.8); /* Slight dark overlay for readability */
+}
+
+.content-section h2 {
+  font-size: 2.4rem;
+  color: #ff914d;
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  background: #2a2a2c;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.feature-box p{
+  font-size: 12px;
+}
+
+.feature-box h3 {
+  color: #00d2ff;
+  margin-bottom: 1rem;
+  font-size: 18px;
+
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================= */
+/* =========================================
+   MOBILE HAMBURGER MENU 
+   ========================================= */
+
+/* 1. Hide the hamburger button on large desktop screens */
+.mobile-menu-btn {
+  display: none; 
+  background: transparent;
+  border: none;
+  color: #ff914d; /* AnimeHub Orange */
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* 2. When the screen shrinks to tablet/mobile size... */
+@media (max-width: 850px) {
+  
+  .navbar {
+    padding: 1.5rem 2rem; /* Keep padding tidy */
+  }
+
+  .brand-text {
+    font-size: 2rem; /* Slightly shrink the logo text */
+  }
+
+  /* Show the hamburger button! */
+  .mobile-menu-btn {
+  display: none; 
+  background: transparent;
+  border: none;
+  color: #ff914d; /* AnimeHub Orange */
+  
+  /* NEW: Adjusted for text characters */
+  font-size: 2.2rem; 
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+  
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+  /* 3. Turn the navigation links into a hidden dropdown menu */
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Drops exactly below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: rgba(20, 20, 22, 0.95); /* Deep dark background */
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 145, 77, 0.2);
+    
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    
+    /* Hide it smoothly using opacity and an upward shift */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* 4. When Angular adds the 'nav-active' class, slide it down and fade it in! */
+  .nav-links.nav-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* 5. Make the buttons look uniform inside the mobile menu */
+  .nav-btn {
+    width: 80%;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .login-nav {
+    margin-left: 0; /* Remove the extra space we added for desktop */
+  }
+}@media (max-width: 850px) {
+  /* 1. Stack the logo and the buttons vertically and reduce side padding */
+  .navbar {
+    flex-direction: row !important; 
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.5rem 2rem; 
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem; /* Keeps them tight together */
+  }
+
+  /* 2. Your current text size */
+  .brand-text {
+    font-size: 4rem; 
+  }
+
+  /* 3. NEW: Shrink the 'A' box so it matches the height of the text */
+  .logo-icon {
+    font-size: 4rem;
+    padding: 0px 0px; /* Reduced the top/bottom padding to make the box shorter */
+    border-radius: 8px; /* Slightly smaller curve to match the smaller box */
+  }
+
+  .mobile-menu-btn {
+    display: block !important; 
+    position: relative;
+    z-index: 2000; /* Makes sure it doesn't hide behind the glass menu */
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+    padding: 6px 15px;
+  }
+
+  /* ... Keep the .navbar and .mobile-menu-btn stuff at the top of the media query ... */
+
+  /* 3. The Dropdown Container */
+  .nav-links {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    /* Made slightly darker so the text underneath doesn't bleed through as much */
+    background-color: rgba(20, 20, 22, 0.98); 
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 145, 77, 0.2);
+    
+    flex-direction: column;
+    /* Removed gaps and padding so the menu items span edge-to-edge */
+    padding: 0; 
+    gap: 0; 
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .nav-links.nav-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* 4. The Clean, Native-App Menu Items */
+  .nav-btn {
+    width: 100%;
+    padding: 1.5rem 2.5rem; /* Luxurious spacing */
+    
+    /* Strip away all the heavy desktop button styling */
+    background: transparent !important; 
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    
+    justify-content: flex-start; /* Align text to the left cleanly */
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #e0e0e0;
+    
+    /* Add a very subtle line between items */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; 
+  }
+
+  /* Give the icons a uniform size and pop of AnimeHub Orange */
+  .nav-btn i {
+    margin-right: 1rem;
+    color: #ff914d;
+    width: 25px; 
+    text-align: center;
+  }
+
+  /* 5. The Login Button (The main Call-To-Action) */
+  .login-nav {
+    margin: 2rem auto; /* Add space above it */
+    width: 85%; /* Don't let it touch the edges */
+    padding: 1.2rem;
+    
+    /* Bring back the button shape just for this one item */
+    border-radius: 12px !important;
+    background: linear-gradient(90deg, #e52e71, #ff8a00) !important;
+    justify-content: center; /* Center the text */
+    border-bottom: none !important;
+  }
+
+  .login-nav i {
+    color: white; /* Ensure the icon stays white inside the gradient */
+  }
+
+  /* =========================================
+     MOBILE HERO SECTION (Text & Slider)
+     ========================================= */
+
+  /* 1. Change from side-by-side to stacked vertically */
+  .hero-section {
+    flex-direction: column;
+    padding: 2rem 1.5rem; /* Reduce the massive desktop padding */
+    text-align: center;   /* Center text for a cleaner mobile layout */
+    gap: 3rem;            /* Add space between the text and the image slider */
+    margin-top: 1rem;
+  }
+
+  /* 2. Shrink the massive H1 and paragraph text */
+  .hero-content h1 {
+    font-size: 2.8rem; /* Scaled down from the huge desktop size */
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    margin: 1.5rem auto 2.5rem auto; /* Center it and add space below */
+  }
+
+  /* 3. Center the buttons and allow them to wrap on tiny screens */
+  .cta-buttons {
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 1rem;
+  }
+
+  /* Slightly reduce button padding to fit better on mobile */
+  .btn-explore, .btn-start {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* 4. Fix the image slider so it doesn't get cut off on the right edge */
+  .hero-graphics {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    max-width: 100%; /* Forces it to never be wider than the phone screen */
+  }
+}
+
+/* --- Special Login Button Styling --- */
+.login-btn {
+  background: #ff7e5f; /* Uses your brand's orange color */
+  color: white;
+  border-color: #ff7e5f;
+  font-weight: bold;
+  margin-left: 2rem; /* Adds a little extra space between it and "About" */
+}
+
+.login-btn:hover {
+  background: transparent;
+  color: #ff7e5f;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (MEDIA QUERIES)
+   ========================================= */
+
+   /* THE FIX: Hide the button on large desktop screens by default */
+.mobile-toggle-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  /* The Orange Hitbox Button */
+  .mobile-toggle-btn {
+    display: block !important;
+    background: rgba(255, 126, 95, 0.15);
+    border: 2px solid #ff7e5f;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.5rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s;
+    position: relative; 
+    z-index: 9999;
+    
+    transition: all 0.3s;
+  }
+
+  .mobile-toggle-btn:hover {
+    background: #ff7e5f;
+    color: #121212;
+  }
+
+  /* The Slide-Out Menu */
+  /* The Slide-Out Menu */
+  /* 1. The Sleek Side Drawer */
+  .nav-links {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important; 
+    left: auto !important; 
+    height: 100vh !important;
+    width: 220px !important; /* Slightly narrower so it doesn't eat the whole screen */
+    background: rgba(20, 20, 22, 0.98); /* A richer, deeper dark background */
+    backdrop-filter: blur(15px);
+    display: flex !important; 
+    flex-direction: column;
+    
+    /* Push items to the top, and add 6rem top padding so it doesn't cover your logo! */
+    justify-content: flex-start !important; 
+    padding: 6rem 1.5rem 2rem 1.5rem !important; 
+    
+    transform: translateX(100%); 
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother sliding animation */
+    
+    border-left: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border edge */
+    box-shadow: -10px 0 30px rgba(0,0,0,0.8); /* Stronger shadow for depth */
+    z-index: 1999; 
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* 2. Format the buttons inside the drawer cleanly */
+  .nav-links .nav-btn {
+    width: 100%;
+    justify-content: flex-start; /* Left-align the text */
+    text-align: left;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.5rem;
+    border: none !important; /* Remove the boxy borders */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #ccc;
+  }
+
+  .nav-links .nav-btn i {
+    margin-right: 12px;
+    color: #ff7e5f; /* Pop of your brand color on the icons */
+  }
+
+  /* 3. Make the Login button stand out */
+  .nav-links .login-btn {
+    background: linear-gradient(90deg, #ff7e5f, #ff914d) !important;
+    color: white !important;
+    margin-top: 1rem;
+    justify-content: center; /* Center just this one button */
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+  }
+
+  .nav-links .login-btn i {
+    color: white; /* Keep the login icon white */
+  }
+
+  /* The Active State that slides it in */
+  .nav-links.mobile-active {
+    transform: translateX(0) !important; 
+  }
+
+  /* Fix the Overlapping Text! */
+  .hero-section {
+    flex-direction: column; 
+    padding: 10rem 2rem 3rem 2rem;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem; 
+  }
+
+  .cta-buttons {
+    justify-content: center; 
+    margin-bottom: 3rem;
+  }
+
+  .slideshow-container {
+    height: 250px;
+    margin-top: 80px;
+  }
+}

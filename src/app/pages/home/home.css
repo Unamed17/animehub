@@ -1,0 +1,357 @@
+/* --- Base Layout --- */
+.app-background {
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --- The Dashboard Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(26, 26, 28, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  color: #ff7e5f;
+}
+
+.outline-nav {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.outline-nav:hover {
+  border-color: #ff7e5f;
+  background: rgba(255, 126, 95, 0.1);
+}
+
+/* --- Active Page Highlight --- */
+.active-nav {
+  background: rgba(255, 126, 95, 0.15); /* A soft orange background glow */
+  border: 1px solid #ff7e5f;            /* Solid brand orange border */
+  color: #ff7e5f;                       /* Orange text and icon */
+  cursor: default;                      /* Standard pointer since they are already here */
+}
+
+/* Keeps it highlighted even if they hover over it */
+.active-nav:hover {
+  background: rgba(255, 126, 95, 0.15);
+  border-color: #ff7e5f;
+  color: #ff7e5f;
+}
+
+/* --- Hero Section & Typography --- */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8rem 4rem 4rem 4rem; /* Top padding clears the fixed navbar */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  flex: 1;
+  color: white;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* --- CTA Buttons --- */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn-explore {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-explore:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
+}
+
+.btn-start {
+  background: transparent;
+  color: white;
+  border: 2px solid #00d2ff;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-start:hover {
+  background: rgba(0, 210, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* --- Slideshow Graphics --- */
+.hero-graphics {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.slideshow-container {
+  width: 100%;
+  max-width: 650px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 24px;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+  margin-bottom: 2rem;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.slide-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.slide-btn:hover {
+  background: rgba(0, 210, 255, 0.8);
+  border-color: transparent;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* The Pink-to-Orange Seasonal Button */
+.btn-seasonal-large {
+  background: linear-gradient(90deg, #f5317f, #ff7c14); 
+  color: white;
+  border: none;
+  padding: 1.2rem 4rem;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(245, 49, 127, 0.4);
+  transition: transform 0.3s;
+}
+
+.btn-seasonal-large:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================================
+   NAVBAR SPECIFIC STYLES (HOME PAGE)
+   ========================================= */
+
+/* --- Brand Logo --- */
+.brand {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-box {
+  background: #ff7e5f;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.brand-text {
+  color: #ff7e5f;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+/* --- Layout & Greeting --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.user-greeting {
+  color: white;
+  margin: 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.highlight-name {
+  color: #ff7e5f;
+  font-weight: bold;
+}
+
+/* --- Custom Logout Button --- */
+.logout-btn {
+  border-color: #ff4d4d !important;
+  color: #ff4d4d !important;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 77, 77, 0.1) !important;
+  color: #ff4d4d !important;
+  border-color: #ff4d4d !important;
+}
+
+/* =========================================
+   HAMBURGER & DROPDOWN MENU
+   ========================================= */
+
+.hamburger-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.hamburger-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0.5rem;
+}
+
+.hamburger-icon:hover {
+  color: #ff7e5f;
+  transform: scale(1.1);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 150%;
+  right: 0;
+  background: rgba(26, 26, 28, 0.95);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  min-width: 180px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+  overflow: hidden;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 126, 95, 0.15);
+  color: #ff7e5f;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0;
+}
+
+.logout-text {
+  color: #ff4d4d;
+}
+
+.logout-text:hover {
+  background: rgba(255, 77, 77, 0.15);
+  color: #ff4d4d;
+}

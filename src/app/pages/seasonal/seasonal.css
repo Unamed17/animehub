@@ -1,0 +1,210 @@
+.seasonal-wrapper {
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* CHANGE THIS: from 'hidden' to 'auto' to enable vertical scrolling */
+}
+
+/* --- Top Bar --- */
+/* --- Navbar Layout --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  
+  background-color: rgba(26, 26, 28, 0.75); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); 
+  
+  position: sticky;
+  top: 0; /* Normal state is sitting at the top */
+  z-index: 1000; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  
+  /* NEW: Add a smooth animation for when it moves */
+  transition: top 0.4s ease-in-out;
+}
+
+.navbar-hidden {
+  /* Pushes the navbar 150px upwards, completely off the screen */
+  top: -150px; 
+}
+
+/* --- Brand Logo Styling --- */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo-box {
+   background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  font-weight: bold;
+  font-size: 4rem; /* Increased from 1.5rem */
+  padding: 1px 15px; /* Slightly wider padding to match the new height */
+  border-radius: 10px;
+  /*add my own logo here*/
+}
+
+.brand-text {
+  font-family: 4rem; /* Increased from 2rem to 2.8rem */
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ff914d; 
+  text-shadow: 0 0 8px rgba(255, 145, 77, 0.6);
+}
+
+/* --- Navigation Buttons --- */
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-btn {
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px; /* Gives that nice pill shape */
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* The solid orange button */
+.nav-btn.active {
+  background: #ff914d;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 145, 77, 0.3);
+}
+
+/* The hollow blue/cyan buttons */
+.nav-btn.outline {
+  background: transparent;
+  color: white;
+  border: 1px solid #00d2ff; /* Cyan border */
+}
+
+.nav-btn.outline:hover {
+  background: rgba(0, 210, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 145, 77, 0.2);
+  color: #ff914d;
+  border-color: #ff914d;
+  transform: translateX(-4px);
+}
+
+.brand-header { cursor: pointer; }
+.brand-text { font-size: 1.5rem; font-weight: 800; color: #ff914d; }
+
+/* --- Headers & Loading --- */
+.page-header { text-align: center; margin-bottom: 4rem; }
+.clean-title { font-size: 2.8rem; font-weight: 800; color: white; margin: 0 0 1rem 0; }
+.subtitle { font-size: 1.1rem; color: #bbb; }
+
+.loading-state {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff914d;
+  margin-top: 5rem;
+}
+
+/* --- The Grid & Cards --- */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.anime-card {
+  background: rgba(20, 20, 22, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.anime-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(255, 145, 77, 0.15);
+  border-color: rgba(255, 145, 77, 0.3);
+}
+
+.card-image-wrapper { position: relative; width: 100%; height: 350px; overflow: hidden; }
+.anime-poster { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.anime-card:hover .anime-poster { transform: scale(1.1); }
+
+.score-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffd700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.card-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.card-content h3 { font-size: 1.2rem; margin: 0 0 1.5rem 0; color: #fff; }
+
+.btn-view {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.8rem;
+  background: transparent;
+  color: #ff914d;
+  font-weight: bold;
+  border: 1px solid #ff914d;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view:hover { background: #ff914d; color: white; 
+}
+
+/* --- The Rank Badge --- */
+.rank-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #e52e71, #ff8a00); /* Sexy pink-to-orange gradient */
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 900;
+  padding: 0.5rem 1.2rem;
+  border-bottom-right-radius: 16px; /* Curves the bottom right corner */
+  z-index: 10;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+}
