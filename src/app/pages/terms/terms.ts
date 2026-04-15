@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Import the Router
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-terms',
@@ -8,13 +9,19 @@ import { Router } from '@angular/router'; // Import the Router
   templateUrl: './terms.html',
   styleUrl: './terms.css'
 })
-export class TermsComponent {
+export class Terms {
 
-  // Inject the Router in the constructor
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router, 
+    private location: Location
+  ) {}
 
-  // Define the goBack function
+
   goBack() {
-    this.router.navigate(['/register']); // This takes the user back to your register page
+    this.router.navigate(['/register']);
+  }
+
+  goPrevious() {
+    this.location.back();
   }
 }

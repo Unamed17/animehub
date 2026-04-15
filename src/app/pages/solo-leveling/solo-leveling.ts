@@ -25,12 +25,13 @@ export class SoloLeveling {
     "./images/Solo Leveling/10.jpg",
     "./images/Solo Leveling/11.jpg",
     "./images/Solo Leveling/12.jpg",
+    "./images/Solo Leveling/13.jpg",
   ];
 
-  // 1. Add this variable to track the clicked image
+
   selectedImage: string | null = null;
 
-  // 2. Add these functions to open and close it
+
   openLightbox(img: string) {
     this.selectedImage = img;
   }

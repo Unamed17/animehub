@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './aot.css'
 })
 export class Aot {
-  // HARDCODED STATIC DATA
   title = "Attack on Titan";
   images = [
     "./images/aot/1.jpg", 
@@ -25,10 +24,8 @@ export class Aot {
     "./images/aot/10.jpg"
   ];
 
-  // 1. Add this variable to track the clicked image
   selectedImage: string | null = null;
 
-  // 2. Add these functions to open and close it
   openLightbox(img: string) {
     this.selectedImage = img;
   }

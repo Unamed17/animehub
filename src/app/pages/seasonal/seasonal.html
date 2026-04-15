@@ -1,23 +1,6 @@
+<app-header></app-header>
+
 <div class="seasonal-wrapper">
-  
-  <header class="navbar" [class.navbar-hidden]="isNavbarHidden">
-  
-  <div class="nav-brand">
-    <div class="logo-box">A</div>
-    <span class="brand-text">nimeHub</span>
-  </div>
-
-  <div class="nav-links">
-    <button class="nav-btn active" (click)="goHome()">Home</button>
-
-    <button class="nav-btn outline" (click)="goContact()">Contact</button>
-
-    <button class="nav-btn outline" (click)="goAbout()">About</button>
-
-  </div>
-
-  </header>
-
   <div class="page-header">
     <h1 class="clean-title">Top Anime This Season</h1>
     <p class="subtitle">The hottest shows currently airing across the globe.</p>
@@ -28,13 +11,10 @@
   </div>
 
   <div class="anime-grid" *ngIf="!isLoading">
-    
     <div class="anime-card" *ngFor="let anime of seasonalList; let i = index">
       
       <div class="card-image-wrapper">
-        
         <div class="rank-badge">#{{ i + 1 }}</div>
-
         <img [src]="anime.images.jpg.large_image_url" [alt]="anime.title" class="anime-poster">
         
         <div class="score-badge" *ngIf="anime.score">
@@ -43,11 +23,17 @@
       </div>
 
       <div class="card-content">
-        <h3>{{ anime.title_english || anime.title }}</h3>
-        <button class="btn-view">View Details</button>
-      </div>
-
+    <h3 class="anime-title">{{ anime.title_english || anime.title }}</h3>
+    
+    <div class="description-container">
+      <p class="anime-description">
+        {{ anime.synopsis | slice:0:120 }}{{ anime.synopsis?.length > 120 ? '...' : '' }}
+      </p>
     </div>
-
   </div>
+
 </div>
+</div>
+
+  <app-footer></app-footer>
+

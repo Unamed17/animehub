@@ -14,7 +14,7 @@ export class Register {
   userName = '';
   userEmail = '';
   userPassword = '';
-  confirmPassword = ''; // 1. Added Confirm Password variable
+  confirmPassword = '';
   errorMessage = '';
 
   constructor(private router: Router, private location: Location) {}
@@ -31,10 +31,10 @@ export class Register {
       return;
     }
 
-    // THE KEY FIX: These names MUST match login.ts exactly
+ 
     localStorage.setItem('savedUsername', this.userName); 
-    localStorage.setItem('savedEmail', this.userEmail);    // Changed from 'userEmail'
-    localStorage.setItem('savedPassword', this.userPassword); // Changed from 'userPassword'
+    localStorage.setItem('savedEmail', this.userEmail);
+    localStorage.setItem('savedPassword', this.userPassword);
     
     this.errorMessage = '';
     alert("Registration Successful! Your account is now saved.");
@@ -42,6 +42,6 @@ export class Register {
   }
 
   goHome() {
-    this.location.back();
+    this.router.navigate(['/']);
   }
 }

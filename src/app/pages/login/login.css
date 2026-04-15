@@ -1,6 +1,4 @@
-/* --- Background & Layout --- */
 .auth-wrapper {
-  /* Make sure your anime collage image is named background.jpg in your public folder! */
   background: url('/background.jpg') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
@@ -11,7 +9,7 @@
   position: relative;
 }
 
-/* --- Back to Home Button --- */
+
 .back-btn {
   position: absolute;
   top: 2rem;
@@ -31,9 +29,9 @@
   color: white;
 }
 
-/* --- The Solid Dark Card --- */
+
 .auth-card {
-  background-color: #1a1a1c; /* Solid dark gray */
+  background-color: #1a1a1c;
   border-radius: 16px;
   padding: 3rem;
   width: 100%;
@@ -42,7 +40,7 @@
   text-align: center;
 }
 
-/* --- Logo & Header --- */
+
 .brand-header {
   display: flex;
   align-items: center;
@@ -52,7 +50,7 @@
 }
 
 .logo-box {
-  background: #ff7e5f; /* Solid orange box */
+  background: #ff7e5f;
   color: white;
   font-weight: 900;
   font-size: 1.4rem;
@@ -78,7 +76,7 @@ h2 {
   margin-bottom: 2rem;
 }
 
-/* --- Inputs --- */
+
 .input-group {
   margin-bottom: 1rem;
 }
@@ -86,7 +84,7 @@ h2 {
 .input-group input {
   width: 100%;
   padding: 14px 15px;
-  background-color: #111; /* Very dark input boxes */
+  background-color: #111;
   border: 1px solid #333;
   border-radius: 8px;
   color: white;
@@ -99,7 +97,7 @@ h2 {
   border-color: #ff7e5f;
 }
 
-/* --- Options Row --- */
+
 .form-options {
   display: flex;
   justify-content: space-between;
@@ -126,11 +124,10 @@ h2 {
   opacity: 0.8;
 }
 
-/* --- The Gradient Button --- */
+
 .btn-submit {
   width: 100%;
   padding: 14px;
-  /* Matches the pink-to-orange fade in your screenshot */
   background: linear-gradient(90deg, #f5317f, #ff7c14); 
   color: white;
   font-weight: bold;
@@ -146,7 +143,7 @@ h2 {
   transform: scale(1.02);
 }
 
-/* --- Footer Links --- */
+
 .error-text {
   color: #ff4d4d;
   font-size: 0.9rem;
@@ -158,7 +155,6 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* The cyan text from your screenshot */
 .highlight-link-cyan {
   color: #00e5ff; 
   font-weight: bold;

@@ -1,0 +1,40 @@
+<header class="navbar" [class.navbar-hidden]="isNavbarHidden">
+    
+    <div class="brand" (click)="scrollToTop()">
+      <span class="logo-box">A</span>
+      <span class="brand-text">nimeHub</span>
+    </div>
+
+    <div class="nav-right-group">
+    <div class="nav-links">
+      <button class="nav-btn active-nav" (click)="scrollToTop()">
+        <i class="fas fa-home"></i> Home
+      </button>
+    </div>
+
+      <div class="hamburger-container">
+        
+        <span class="user-greeting">
+        Welcome, <span class="highlight-name">{{ username }}</span>!
+      </span>
+        
+        <i class="fas fa-bars hamburger-icon" (click)="toggleMenu()"></i>
+        
+
+        <div class="dropdown-menu" *ngIf="isMenuOpen">
+          
+          <button class="dropdown-item" [routerLink]="['/contact']" (click)="toggleMenu()">
+            <i class="fas fa-comment-dots"></i> Contact
+          </button>
+          <button class="dropdown-item" [routerLink]="['/about']" (click)="toggleMenu()">
+            <i class="fas fa-info-circle"></i> About
+          </button>
+          
+          <div class="dropdown-divider"></div>
+          
+          <button class="dropdown-item logout-text" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+
+        </div>
+      </div>

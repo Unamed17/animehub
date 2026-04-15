@@ -6,126 +6,27 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* CHANGE THIS: from 'hidden' to 'auto' to enable vertical scrolling */
+
 }
 
-/* --- Top Bar --- */
-/* --- Navbar Layout --- */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
-  
-  background-color: rgba(26, 26, 28, 0.75); 
-  backdrop-filter: blur(12px); 
-  -webkit-backdrop-filter: blur(12px); 
-  
-  position: sticky;
-  top: 0; /* Normal state is sitting at the top */
-  z-index: 1000; 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  
-  /* NEW: Add a smooth animation for when it moves */
-  transition: top 0.4s ease-in-out;
+
+.page-header { 
+  text-align: center; 
+  margin-top: 9rem;
+  margin-bottom: 4rem; 
 }
 
-.navbar-hidden {
-  /* Pushes the navbar 150px upwards, completely off the screen */
-  top: -150px; 
+.clean-title { 
+  font-size: 2.8rem; 
+  font-weight: 800; 
+  color: white; 
+  margin: 0 0 1rem 0; 
 }
 
-/* --- Brand Logo Styling --- */
-.nav-brand {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 4rem;
-  font-weight: 900;
-  letter-spacing: 1px;
+.subtitle { 
+  font-size: 1.1rem; 
+  color: #bbb; 
 }
-
-.logo-box {
-   background: linear-gradient(135deg, #ff7e5f, #feb47b);
-  color: #fff;
-  font-weight: bold;
-  font-size: 4rem; /* Increased from 1.5rem */
-  padding: 1px 15px; /* Slightly wider padding to match the new height */
-  border-radius: 10px;
-  /*add my own logo here*/
-}
-
-.brand-text {
-  font-family: 4rem; /* Increased from 2rem to 2.8rem */
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  color: #ff914d; 
-  text-shadow: 0 0 8px rgba(255, 145, 77, 0.6);
-}
-
-/* --- Navigation Buttons --- */
-.nav-links {
-  display: flex;
-  gap: 1.2rem;
-}
-
-.nav-btn {
-  padding: 0.6rem 1.8rem;
-  border-radius: 30px; /* Gives that nice pill shape */
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* The solid orange button */
-.nav-btn.active {
-  background: #ff914d;
-  color: white;
-  border: none;
-  box-shadow: 0 4px 15px rgba(255, 145, 77, 0.3);
-}
-
-/* The hollow blue/cyan buttons */
-.nav-btn.outline {
-  background: transparent;
-  color: white;
-  border: 1px solid #00d2ff; /* Cyan border */
-}
-
-.nav-btn.outline:hover {
-  background: rgba(0, 210, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-.icon-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ccc;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.icon-btn:hover {
-  background: rgba(255, 145, 77, 0.2);
-  color: #ff914d;
-  border-color: #ff914d;
-  transform: translateX(-4px);
-}
-
-.brand-header { cursor: pointer; }
-.brand-text { font-size: 1.5rem; font-weight: 800; color: #ff914d; }
-
-/* --- Headers & Loading --- */
-.page-header { text-align: center; margin-bottom: 4rem; }
-.clean-title { font-size: 2.8rem; font-weight: 800; color: white; margin: 0 0 1rem 0; }
-.subtitle { font-size: 1.1rem; color: #bbb; }
 
 .loading-state {
   text-align: center;
@@ -134,13 +35,11 @@
   margin-top: 5rem;
 }
 
-/* --- The Grid & Cards --- */
+
 .anime-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .anime-card {
@@ -159,9 +58,23 @@
   border-color: rgba(255, 145, 77, 0.3);
 }
 
-.card-image-wrapper { position: relative; width: 100%; height: 350px; overflow: hidden; }
-.anime-poster { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.anime-card:hover .anime-poster { transform: scale(1.1); }
+.card-image-wrapper { 
+  position: relative; 
+  width: 100%; 
+  height: 350px; 
+  overflow: hidden; 
+}
+
+.anime-poster { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.5s ease; 
+}
+
+.anime-card:hover .anime-poster { 
+  transform: scale(1.1); 
+}
 
 .score-badge {
   position: absolute;
@@ -175,36 +88,107 @@
   border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
-.card-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-.card-content h3 { font-size: 1.2rem; margin: 0 0 1.5rem 0; color: #fff; }
+.card-content {
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(30, 30, 32, 0.5) 0%, rgba(20, 20, 22, 0.9) 100%);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.anime-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-.btn-view {
+.description-container {
+  position: relative;
+  padding-left: 12px;
+  border-left: 3px solid #ff914d;
   margin-top: auto;
-  width: 100%;
-  padding: 0.8rem;
-  background: transparent;
-  color: #ff914d;
-  font-weight: bold;
-  border: 1px solid #ff914d;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.btn-view:hover { background: #ff914d; color: white; 
+.anime-description {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
 }
 
-/* --- The Rank Badge --- */
+
+.anime-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+  box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.anime-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 145, 77, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 145, 77, 0.1);
+}
+
+.card-content h3 { 
+  font-size: 1.2rem; 
+  margin: 0 0 1.5rem 0; 
+  color: #fff; 
+}
+
+
+
+
 .rank-badge {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(135deg, #e52e71, #ff8a00); /* Sexy pink-to-orange gradient */
+  background: linear-gradient(135deg, #e52e71, #ff8a00);
   color: white;
   font-size: 1.3rem;
   font-weight: 900;
   padding: 0.5rem 1.2rem;
-  border-bottom-right-radius: 16px; /* Curves the bottom right corner */
+  border-bottom-right-radius: 16px;
   z-index: 10;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 2rem !important;
+  }
+  
+  .clean-title {
+    font-size: 2.2rem !important;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem !important;
+    justify-content: space-between !important;
+  }
+
+
+  .anime-grid {
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 1rem !important;
+    padding: 0 1rem;
+  }
+
+  .card-image-wrapper {
+    height: 250px !important;
+  }
+
+  .logo-box, .brand-text {
+    font-size: 1.5rem !important;
+  }
+
+  .user-greeting {
+    display: none !important;
+  }
 }

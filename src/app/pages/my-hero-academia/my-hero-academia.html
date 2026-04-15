@@ -9,17 +9,14 @@
     <p class="subtitle">Official Artwork</p>
   </div>
 
-  <div class="masonry-grid">
-    <div class="masonry-item" *ngFor="let img of images">
+  <div class="grid">
+    <div class="item" *ngFor="let img of images">
       <img [src]="img" alt="Artwork" (click)="openLightbox(img)" style="cursor: zoom-in;">
     </div>
   </div>
 </div>
 
 <div class="lightbox-modal" *ngIf="selectedImage" (click)="closeLightbox()">
-  
   <span class="close-btn">&times;</span>
-  
   <img [src]="selectedImage" class="lightbox-content" (click)="$event.stopPropagation()">
-  
 </div>

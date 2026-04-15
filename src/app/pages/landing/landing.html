@@ -1,7 +1,6 @@
 <div class="app-background">
   
   <header class="navbar" [class.navbar-hidden]="isNavbarHidden">
-    
     <div class="brand" (click)="scrollToTop()">
       <span class="logo-box">A</span>
       <span class="brand-text">nimeHub</span>
@@ -103,12 +102,5 @@
 </button>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2024 AnimeHub. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-    </div>
-  </footer>
+  <app-footer></app-footer>
 </div>

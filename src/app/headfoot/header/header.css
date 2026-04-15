@@ -1,0 +1,225 @@
+/* --- The Dashboard Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(26, 26, 28, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+
+.brand {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.logo-box {
+  background: #ff7e5f;
+  color: white;
+  padding: 1px 13px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.brand-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff914d; 
+  text-shadow: 0 0 8px rgba(255, 145, 77, 0.6);
+
+}
+
+/* --- Layout & Greeting --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.active-nav {
+  background: rgba(255, 126, 95, 0.15);
+  border: 1px solid #ff7e5f;
+  color: #ff7e5f;
+}
+
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Fixes the greeting appearance */
+.user-greeting {
+  color: #ffffff;
+  font-size: 0.95rem;
+  white-space: nowrap; /* Prevents text from disappearing */
+  margin-right: 5px;
+  margin-left: 0px;
+}
+
+.highlight-name {
+  color: #ff914d; /* Old Style Orange */
+  font-weight: bold;
+}
+
+/* --- HAMBURGER MENU --- */
+.hamburger-container {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem; /* Gap between "Barry!" and the 3 lines */
+}
+
+.hamburger-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Sits right at the bottom of the navbar */
+  right: 0;   /* Aligns its right edge with the hamburger icon */
+  background-color: rgba(26, 26, 28, 0.9); /* Semi-transparent to match navbar */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  min-width: 160px;
+  padding: 0.5rem 0;
+  margin-top: 0px; /* Space between icon and menu */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+}
+
+.dropdown-item {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Makes the transition smooth */
+  border-radius: 8px; /* Slightly rounds the highlight */
+  margin: 4px 8px;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 126, 95, 0.1); /* Subtle brand orange tint */
+  color: #ff7e5f; /* Changes text to your brand orange */
+  padding-left: 1.5rem;
+}
+
+/* Special Hover for Logout to make it feel distinct */
+.dropdown-item.logout-text:hover {
+  background: rgba(255, 77, 77, 0.1); /* Red tint for logout */
+  color: #ff4d4d; /* Bright red text on hover */
+}
+
+/* Ensure the icons also change color on hover */
+.dropdown-item:hover i {
+  color: inherit;
+}
+
+
+/* --- Phone Responsive (Max width 768px) --- */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem; /* Tightens space for mobile screens */
+    justify-content: space-between; /* Pushes brand left and hamburger right */
+  }
+
+  /* Hides the Home button row on phones */
+  .nav-links {
+    display: none !important; 
+  }
+
+  /* Hides the "Welcome, Barry!" text to clean up the mobile look */
+  .user-greeting {
+    display: none !important;
+  }
+
+  /* Ensures the hamburger container and icon stay visible */
+  .hamburger-container {
+    display: flex !important;
+    align-items: center;
+  }
+
+  /* Optional: Shrink the logo slightly for small screens */
+  .logo-box, .brand-text {
+    font-size: 1.5rem !important;
+  }
+
+}
+
+/* --- Update your Media Query to keep everything visible --- */
+@media screen and (max-width: 900px) {
+  .navbar {
+    padding: 1rem 1.5rem !important;
+    justify-content: space-between !important;
+  }
+
+  /* CHANGE: Do not hide these anymore */
+  .nav-links {
+    display: flex !important; /* Forces Home button to stay visible */
+  }
+
+  .user-greeting {
+    display: block !important; /* Forces "Welcome, Barry!" to stay visible */
+    font-size: 0.8rem; /* Shrink font slightly so it fits */
+  }
+
+  /* Ensure the group stays on one line */
+  .nav-right-group {
+    gap: 1rem !important; /* Tighten the gap so they don't overlap */ /* Shrinks the entire group to fit better on smaller screens */
+  }
+
+  .logo-box, .brand-text {
+    font-size: 2rem !important; /* Make logo smaller to make room */
+  }
+
+  /* --- Tablet & Phone Responsive --- */
+@media screen and (max-width: 900px) {
+  /* Hides the desktop Home button */
+  .nav-links {
+    display: none !important; 
+  }
+
+  /* Ensures the hamburger and greeting stay visible on the right */
+  .hamburger-container {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .user-greeting {
+    font-size: 0.8rem; /* Shrinks greeting to save space */
+  }
+}
+}

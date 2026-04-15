@@ -1,45 +1,6 @@
 <div class="app-background">
 
-  <header class="navbar" [class.navbar-hidden]="isNavbarHidden">
-    
-    <div class="brand" (click)="scrollToTop()">
-      <span class="logo-box">A</span>
-      <span class="brand-text">nimeHub</span>
-    </div>
-
-    <nav class="nav-links">
-      <button class="nav-btn active-nav" (click)="scrollToTop()">
-        <i class="fas fa-home"></i> Home
-      </button>
-
-      <span class="user-greeting">
-        Welcome, <span class="highlight-name">{{ username }}</span>!
-      </span>
-
-      <div class="hamburger-container">
-        
-        <i class="fas fa-bars hamburger-icon" (click)="toggleMenu()"></i>
-
-        <div class="dropdown-menu" *ngIf="isMenuOpen">
-          
-          <button class="dropdown-item" [routerLink]="['/contact']" (click)="toggleMenu()">
-            <i class="fas fa-comment-dots"></i> Contact
-          </button>
-          <button class="dropdown-item" [routerLink]="['/about']" (click)="toggleMenu()">
-            <i class="fas fa-info-circle"></i> About
-          </button>
-          
-          <div class="dropdown-divider"></div>
-          
-          <button class="dropdown-item logout-text" (click)="logout()">
-            <i class="fas fa-sign-out-alt"></i> Logout
-          </button>
-
-        </div>
-      </div>
-
-    </nav>
-  </header>
+<app-header></app-header>
 
   <main class="hero-section">
     <div class="hero-content">
@@ -64,5 +25,5 @@
 
     </div>
   </main>
-  
 </div>
+<app-footer></app-footer>

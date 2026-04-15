@@ -10,23 +10,19 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './contact.css'
 })
 export class Contact {
-  // Inject both Location (for back button) and Router (for home button)
   constructor(private location: Location, private router: Router) {}
 
-  // 1. Logic for the Back button
   goBack() {
     this.location.back();
   }
 
-  // 2. Logic for the Logo/Brand click
   goHome() {
     this.router.navigate(['/']);
   }
 
-  // 3. Logic for the Form Submission
   onSubmit(event: Event) {
-    event.preventDefault(); // Prevents the page from refreshing
+    event.preventDefault();
     alert("Message sent! We will get back to you soon.");
-    this.goHome(); // Sends them back to the landing page after sending
+    this.goHome();
   }
 }

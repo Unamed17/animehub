@@ -18,19 +18,17 @@ export class Login {
   constructor(private router: Router) {}
 
   onLogin() {
-    // 1. Define your GIVEN/STATIC credentials
     const staticEmail = '@animehub';
     const staticPassword = '12345';
 
-    // 2. Also check the browser's "notebook" for any signed-up users
     const savedEmail = localStorage.getItem('savedEmail');
     const savedPassword = localStorage.getItem('savedPassword');
 
-    // 3. Logic: Match STATIC credits OR matches REGISTERED credits
+
     if ((this.loginEmail === staticEmail && this.loginPassword === staticPassword) || 
         (this.loginEmail === savedEmail && this.loginPassword === savedPassword)) {
       
-      // Save the session so the back button and gallery work
+
       localStorage.setItem('savedEmail', this.loginEmail);
       
       this.errorMessage = '';

@@ -15,8 +15,6 @@
   align-items: center;
   margin-bottom: 3rem;
   padding: 1rem 2rem;
-  
-  /* Glassmorphism effect for the bar */
   background: rgba(20, 20, 22, 0.6);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -24,22 +22,14 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Removes the default white background and borders from the button */
-button.brand {
-  background: transparent !important;
-  border: none !important;
-  padding: 0; /* Removes any extra default spacing */
-  outline: none;
-}
 
-/* A sleek, circular glass button for the arrow */
 .icon-btn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ccc;
   width: 42px;
   height: 42px;
-  border-radius: 50%; /* Makes it a perfect circle */
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +38,6 @@ button.brand {
   font-size: 1.1rem;
 }
 
-/* Hover effect with a tiny left-slide animation to indicate "going back" */
 .icon-btn:hover {
   background: rgba(255, 145, 77, 0.2);
   color: #ff914d;
@@ -67,25 +56,25 @@ button.brand {
   background: linear-gradient(135deg, #ff7e5f, #feb47b);
   color: #fff;
   font-weight: bold;
-  font-size: 4rem; /* Increased from 1.5rem */
-  padding: 1px 15px; /* Slightly wider padding to match the new height */
+  font-size: 4rem;
+  padding: 1px 15px;
   border-radius: 10px;
-  /*add my own logo here*/
+
 }
 
 .brand-text {
-  font-size: 4rem; /* Increased from 2rem to 2.8rem */
+  font-size: 4rem;
   font-weight: 800;
   
   color: #ff914d; 
   text-shadow: 0 0 8px rgba(255, 145, 77, 0.6);
 }
 
-/* The Search Input */
+
 .search-container {
   position: relative;
   width: 300px;
-  height: 25px;
+  height: 45px;
 }
 
 .search-icon {
@@ -99,10 +88,10 @@ button.brand {
 
 .search-input {
   width: 100%;
-  padding: 0.8rem 1rem 0.8rem 2.8rem; /* Space on the left for the magnifying glass */
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px; /* Pill shape */
+  border-radius: 30px;
   color: white;
   font-size: 1rem;
   outline: none;
@@ -110,9 +99,6 @@ button.brand {
   box-sizing: border-box;
 }
 
-/* =========================================
-   NO RESULTS MESSAGE
-   ========================================= */
 .no-results {
   text-align: center;
   margin-top: 4rem;
@@ -130,39 +116,23 @@ button.brand {
   margin-bottom: 0.5rem;
 }
 
-/* Glowing orange focus effect */
+
 .search-input:focus {
   border-color: #ff914d;
   box-shadow: 0 0 15px rgba(255, 145, 77, 0.2);
   background: rgba(0, 0, 0, 0.7);
 }
 
-.search-input:focus + .search-icon {
+.search-input:focus .search-icon {
   color: #ff914d;
 }
 
-/* =========================================
-   FIXED HEADER TEXT
-   ========================================= */
 .clean-title {
   font-size: 2.8rem;
   font-weight: 800;
   color: white;
   margin: 0 0 1rem 0;
   letter-spacing: 1px;
-}
-
-/* Mobile Responsiveness for the Top Bar */
-@media (max-width: 768px) {
-  .gallery-top-bar {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem;
-  }
-  
-  .search-container {
-    width: 100%; /* Search bar takes full width on phones */
-  }
 }
 
 
@@ -184,33 +154,28 @@ button.brand {
   color: #bbb;
 }
 
-/* =========================================
-   THE CSS GRID
-   ========================================= */
+
 .gallery-grid {
   display: grid;
-  /* MAGIC: This automatically fits as many 250px cards as possible in a row. 
-     If the screen shrinks, it smoothly drops them to the next line! */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2.5rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* =========================================
-   THE ANIME CARDS
-   ========================================= */
+
+
 .anime-card {
   background: rgba(20, 20, 22, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  overflow: hidden; /* Keeps the zooming image inside the rounded corners */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-/* Hovering lifts the whole card and gives it an orange glow */
+
 .anime-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(255, 145, 77, 0.15);
@@ -220,18 +185,18 @@ button.brand {
 .card-image-wrapper {
   position: relative;
   width: 100%;
-  height: 350px; /* Forces all posters to be the same height */
+  height: 350px;
   overflow: hidden;
 }
 
 .anime-poster {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Prevents stretching, crops perfectly to fit */
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-/* Hovering slowly zooms in on the anime poster */
+
 .anime-card:hover .anime-poster {
   transform: scale(1.1);
 }
@@ -254,7 +219,7 @@ button.brand {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Pushes the button to the bottom if titles are different lengths */
+  flex-grow: 1;
 }
 
 .card-content h3 {
@@ -264,7 +229,7 @@ button.brand {
 }
 
 .btn-view {
-  margin-top: auto; /* Always sits at the bottom of the card */
+  margin-top: auto;
   width: 100%;
   padding: 0.8rem;
   background: transparent;
@@ -281,18 +246,7 @@ button.brand {
   color: white;
 }
 
-/* Mobile Tweak */
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
-  .card-image-wrapper {
-    height: 280px;
-  }
-}
 
-/* Style for when buttons are essentially 'Locked' for guests */
 .guest-lock {
   cursor: not-allowed;
   opacity: 0.7;
@@ -304,33 +258,32 @@ button.brand {
   display: block;
 }
 
-/* Keeps the back button and logo aligned in a row */
+
 .brand-group {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Space between the arrow and the 'A' box */
+  gap: 1.5rem;
 }
 
-/* Ensure the brand button doesn't add extra padding *
 
-/* Customize your existing icon-btn for the navbar look */
-.icon-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ccc;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .card-image-wrapper {
+    height: 280px;
+  }
 }
 
-.icon-btn:hover {
-  background: rgba(255, 145, 77, 0.2);
-  color: #ff914d;
-  border-color: #ff914d;
-  transform: translateX(-4px); 
+@media (max-width: 768px) {
+  .gallery-top-bar {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .search-container {
+    width: 100%;
+  }
 }

@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './bleach.css'
 })
 export class Bleach {
-  // HARDCODED STATIC DATA
   title = "Bleach";
   images = [
     "./images/bleach/1.jpg", 
@@ -25,10 +24,9 @@ export class Bleach {
     "./images/bleach/10.jpg"
   ];
 
-  // 1. Add this variable to track the clicked image
   selectedImage: string | null = null;
 
-  // 2. Add these functions to open and close it
+
   openLightbox(img: string) {
     this.selectedImage = img;
   }

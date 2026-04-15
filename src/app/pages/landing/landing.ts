@@ -1,20 +1,28 @@
 import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { Footer } from '../../headfoot/footer/footer';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, Footer],
   templateUrl: './landing.html',
   styleUrl: './landing.css'
 })
 export class Landing implements OnInit, OnDestroy {
   
   animeImages: string[] = [
-    './images/1.jpg', './images/2.jpg', './images/3.jpg', './images/4.jpg',
-    './images/5.jpg', './images/6.jpg', './images/7.jpg', './images/8.jpg',
-    './images/9.jpg', './images/10.jpg'
+    './images/Slideshow/1.jpg',
+    './images/Slideshow/2.jpg', 
+    './images/Slideshow/3.jpg', 
+    './images/Slideshow/4.jpg',
+    './images/Slideshow/5.jpg', 
+    './images/Slideshow/6.jpg', 
+    './images/Slideshow/7.jpg', 
+    './images/Slideshow/8.jpg',
+    './images/Slideshow/9.jpg', 
+    './images/Slideshow/10.jpg'
   ];
   
   currentImageIndex: number = 0;
@@ -30,7 +38,6 @@ export class Landing implements OnInit, OnDestroy {
 
     console.log("Hamburger Clicked! Menu is now:", this.isMobileMenuOpen);
     
-    // This FORCES Angular to wake up and apply the CSS class instantly
     this.cdr.detectChanges();
   }
 
@@ -44,7 +51,7 @@ export class Landing implements OnInit, OnDestroy {
     this.stopSlideshow();
   }
 
-  // --- AUTOMATIC SLIDESHOW LOGIC ---
+
   startSlideshow() {
     this.slideshowInterval = setInterval(() => {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.animeImages.length;
@@ -58,7 +65,7 @@ export class Landing implements OnInit, OnDestroy {
     }
   }
 
-  // --- MANUAL SLIDESHOW LOGIC ---
+
   nextSlide() {
     this.currentImageIndex = (this.currentImageIndex + 1) % this.animeImages.length;
     this.resetTimer();
@@ -74,7 +81,7 @@ export class Landing implements OnInit, OnDestroy {
     this.startSlideshow(); 
   }
 
-  // --- SCROLL & MENU LOGIC ---
+
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

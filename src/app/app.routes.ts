@@ -4,7 +4,7 @@ import { Aot } from './pages/aot/aot';
 import { Blackclover } from './pages/blackclover/blackclover';
 import { Bleach } from './pages/bleach/bleach';
 import { DeathNote } from './pages/death-note/death-note';
-import { TermsComponent } from './pages/terms/terms';
+import { Terms } from './pages/terms/terms';
 import { DemonSlayer } from './pages/demon-slayer/demon-slayer';
 import { Haikyu } from './pages/haikyu/haikyu';
 import { HunterXHunter } from './pages/hunter-x-hunter/hunter-x-hunter';
@@ -17,16 +17,16 @@ import { SoloLeveling } from './pages/solo-leveling/solo-leveling';
 
 
 export const routes: Routes = [
-  // 1. When they visit the blank URL, show the new Landing page
     {path: '', component: Landing }, 
     {path: 'home', loadComponent: () => import('./pages/home/home').then(m => m.Home) },
     {path: 'login', loadComponent: () => import('./pages/login/login').then(m => m.Login)},
     {path: 'register', loadComponent: () => import('./pages/register/register').then(m => m.Register)},
-    {path: 'terms', component: TermsComponent }, // Add this line
     {path: 'about', loadComponent: () => import('./pages/about/about').then(m => m.About)},
     {path: 'contact', loadComponent: () => import('./pages/contact/contact').then(m => m.Contact)},
     {path: 'gallery', loadComponent: () => import('./pages/gallery/gallery').then(m => m.Gallery)},
     {path: 'seasonal', loadComponent: () => import('./pages/seasonal/seasonal').then(m => m.Seasonal)},
+    {path: 'terms', component: Terms },
+
     {path: 'aot', component: Aot },
     {path: 'blackclover', component: Blackclover },
     {path: 'bleach', component: Bleach },

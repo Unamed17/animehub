@@ -25,10 +25,8 @@ export class HunterXHunter {
     "./images/hunter-x-hunter/10.jpg"
   ];
 
-  // 1. Add this variable to track the clicked image
   selectedImage: string | null = null;
 
-  // 2. Add these functions to open and close it
   openLightbox(img: string) {
     this.selectedImage = img;
   }

@@ -16,7 +16,6 @@ export class About {
     this.location.back();
   }
 
-  // ADD THIS FUNCTION to fix the error in your HTML
   goContact() {
     this.router.navigate(['/contact']);
   }

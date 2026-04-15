@@ -1,9 +1,14 @@
-<div class="terms-container">
-  <div class="terms-card">
-    <header class="terms-header">
-      <h1>Terms & Conditions</h1>
-      <p>Last Updated: April 2026</p>
-    </header>
+<div class="terms-page-wrapper">
+  <button class="floating-back-btn" (click)="goPrevious()">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+
+  <div class="terms-container">
+    <div class="terms-card">
+      <header class="terms-header">
+        <h1>Terms & Conditions</h1>
+        <p>Last Updated: April 2026</p>
+      </header>
 
     <section class="terms-content">
       <div class="terms-section">
@@ -31,9 +36,5 @@
         <p>We reserve the right to suspend or terminate accounts that violate these terms without prior notice.</p>
       </div>
     </section>
-
-    <footer class="terms-footer">
-      <button class="btn-back" (click)="goBack()">Back to Register</button>
-    </footer>
   </div>
 </div>
