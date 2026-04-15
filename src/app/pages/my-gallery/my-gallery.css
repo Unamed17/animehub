@@ -1,0 +1,111 @@
+.gallery-wrapper {
+  padding: 8rem 5% 3rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: white;
+  min-height: 100vh;
+}
+
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.anime-title {
+  font-size: 3.5rem;
+  color: #ff914d;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+
+.grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background-color: #2a2a2a;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block; 
+  transition: transform 0.4s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+
+.remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 77, 77, 0.9);
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item:hover .remove-btn {
+  opacity: 1;
+}
+
+
+
+
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #888;
+}
+
+.empty-state i {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 145, 77, 0.3);
+}
+
+.btn-back {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: #ff914d;
+  border: 2px solid #ff914d;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+@media (max-width: 900px) {
+  .masonry-grid { column-count: 2; }
+}
+
+@media (max-width: 600px) {
+  .masonry-grid { column-count: 1; }
+  .anime-title { font-size: 2.5rem; }
+}

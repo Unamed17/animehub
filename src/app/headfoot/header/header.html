@@ -23,9 +23,14 @@
 
         <div class="dropdown-menu" *ngIf="isMenuOpen">
           
+          <button class="dropdown-item" [routerLink]="['/my-gallery']" (click)="toggleMenu()">
+            <i class="fas fa-images"></i> My Gallery
+          </button>
+
           <button class="dropdown-item" [routerLink]="['/contact']" (click)="toggleMenu()">
             <i class="fas fa-comment-dots"></i> Contact
           </button>
+
           <button class="dropdown-item" [routerLink]="['/about']" (click)="toggleMenu()">
             <i class="fas fa-info-circle"></i> About
           </button>

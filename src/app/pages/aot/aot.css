@@ -58,6 +58,8 @@
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   background-color: #2a2a2a;
+
+  position: relative;
 }
 
 .item img {
@@ -75,20 +77,34 @@
   filter: brightness(1.1);
 }
 
-
-@media (max-width: 900px) {
-  .grid {
-    column-count: 2;
-  }
+.heart-btn {
+  position: absolute;
+  top: 15px; /* Distance from the top of the image */
+  right: 15px; /* Distance from the right of the image */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark circle */
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(5px); /* Adds a glass effect behind the heart */
 }
 
-@media (max-width: 600px) {
-  .grid {
-    column-count: 1;
-  }
-  .anime-title {
-    font-size: 2.5rem;
-  }
+.heart-btn:hover {
+  background: rgba(255, 145, 77, 0.9); /* AnimeHub Orange on hover */
+  transform: scale(1.15); /* Makes the button pop out slightly */
+}
+
+/* --- Color for the Active Heart --- */
+.heart-btn i.active {
+  color: #ff4d4d; /* Bright red when favorited */
+  filter: drop-shadow(0 0 5px rgba(255, 77, 77, 0.5));
 }
 
 /*FULLSCREEN LIGHTBOX */
@@ -139,5 +155,28 @@
   to { 
     transform: scale(1); 
     opacity: 1; 
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    column-count: 1;
+  }
+
+  .anime-title {
+    font-size: 2.5rem;
+  }
+
+  .heart-btn {
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
   }
 }

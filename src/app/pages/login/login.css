@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 0px;
   margin-bottom: 1.5rem;
 }
 
@@ -53,8 +53,8 @@
   background: #ff7e5f;
   color: white;
   font-weight: 900;
-  font-size: 1.4rem;
-  padding: 4px 12px;
+  font-size: 1.7rem;
+  padding: 2px 8px;
   border-radius: 6px;
 }
 

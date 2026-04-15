@@ -34,4 +34,27 @@ export class Bleach {
   closeLightbox() {
     this.selectedImage = null;
   }
+
+favorites: string[] = [];
+
+ngOnInit() {
+  
+  const saved = localStorage.getItem('myFavorites');
+  this.favorites = saved ? JSON.parse(saved) : [];
+}
+
+toggleFavorite(img: string) {
+  const index = this.favorites.indexOf(img);
+  if (index > -1) {
+    this.favorites.splice(index, 1);
+  } else {
+    this.favorites.push(img);
+  }
+  
+  localStorage.setItem('myFavorites', JSON.stringify(this.favorites));
+}
+
+isFavorite(img: string): boolean {
+  return this.favorites.includes(img);
+}
 }

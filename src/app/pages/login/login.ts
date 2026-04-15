@@ -35,7 +35,7 @@ export class Login {
       alert("Login Successful!");
       this.router.navigate(['/home']);
     } else {
-      this.errorMessage = 'Invalid credentials. Use admin@gmail.com / 12345';
+      this.errorMessage = 'Invalid credentials. Use @animehub / 12345';
     }
   }
 

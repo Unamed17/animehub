@@ -25,10 +25,10 @@ export class Blackclover {
     "./images/blackclover/10.jpg"
   ];
 
-  // 1. Add this variable to track the clicked image
+ 
   selectedImage: string | null = null;
 
-  // 2. Add these functions to open and close it
+
   openLightbox(img: string) {
     this.selectedImage = img;
   }
@@ -36,5 +36,29 @@ export class Blackclover {
   closeLightbox() {
     this.selectedImage = null;
   }
+
+  favorites: string[] = [];
+
+ngOnInit() {
+ 
+  const saved = localStorage.getItem('myFavorites');
+  this.favorites = saved ? JSON.parse(saved) : [];
 }
+
+toggleFavorite(img: string) {
+  const index = this.favorites.indexOf(img);
+  if (index > -1) {
+    this.favorites.splice(index, 1);
+  } else {
+    this.favorites.push(img); 
+  }
+ 
+  localStorage.setItem('myFavorites', JSON.stringify(this.favorites));
+}
+
+isFavorite(img: string): boolean {
+  return this.favorites.includes(img);
+}
+}
+
 

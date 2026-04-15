@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { Footer } from '../../headfoot/footer/footer';
 
+
 @Component({
   selector: 'app-gallery',
   standalone: true,

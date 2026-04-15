@@ -10,8 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './demon-slayer.css'
 })
 export class DemonSlayer {
-  // HARDCODED STATIC DATA
-  title = "Attack on Titan";
+  title = "Demon Slayer";
   images = [
     "./images/Demon Slayer/1.jpg", 
     "./images/Demon Slayer/2.jpg", 
@@ -22,7 +21,14 @@ export class DemonSlayer {
     "./images/Demon Slayer/7.jpg",
     "./images/Demon Slayer/8.jpg",
     "./images/Demon Slayer/9.jpg",
-    "./images/Demon Slayer/10.jpg"
+    "./images/Demon Slayer/10.jpg",
+    "./images/Demon Slayer/11.jpg",
+    "./images/Demon Slayer/12.jpg",
+    "./images/Demon Slayer/13.jpg",
+    "./images/Demon Slayer/14.jpg",
+    "./images/Demon Slayer/15.jpg",
+    "./images/Demon Slayer/16.jpg",
+
   ];
 
   // 1. Add this variable to track the clicked image
@@ -36,4 +42,27 @@ export class DemonSlayer {
   closeLightbox() {
     this.selectedImage = null;
   }
+
+  favorites: string[] = [];
+
+ngOnInit() {
+  
+  const saved = localStorage.getItem('myFavorites');
+  this.favorites = saved ? JSON.parse(saved) : [];
+}
+
+toggleFavorite(img: string) {
+  const index = this.favorites.indexOf(img);
+  if (index > -1) {
+    this.favorites.splice(index, 1);
+  } else {
+    this.favorites.push(img);
+  }
+  
+  localStorage.setItem('myFavorites', JSON.stringify(this.favorites));
+}
+
+isFavorite(img: string): boolean {
+  return this.favorites.includes(img);
+}
 }

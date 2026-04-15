@@ -42,6 +42,7 @@ export class Header {
   }
 
   goHome() { this.router.navigate(['/home']); }
+  goGallery() { this.router.navigate(['/gallery']); }
   goContact() { this.router.navigate(['/contact']); }
   goAbout() { this.router.navigate(['/about']); }
 }

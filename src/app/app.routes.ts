@@ -13,6 +13,7 @@ import { MyHeroAcademia } from './pages/my-hero-academia/my-hero-academia';
 import { Naruto } from './pages/naruto/naruto';
 import { OnePiece } from './pages/one-piece/one-piece';
 import { SoloLeveling } from './pages/solo-leveling/solo-leveling';
+import { MyGallery } from './pages/my-gallery/my-gallery';
 
 
 
@@ -26,6 +27,7 @@ export const routes: Routes = [
     {path: 'gallery', loadComponent: () => import('./pages/gallery/gallery').then(m => m.Gallery)},
     {path: 'seasonal', loadComponent: () => import('./pages/seasonal/seasonal').then(m => m.Seasonal)},
     {path: 'terms', component: Terms },
+    {path: 'my-gallery', component: MyGallery },
 
     {path: 'aot', component: Aot },
     {path: 'blackclover', component: Blackclover },

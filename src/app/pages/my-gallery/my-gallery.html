@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div class="gallery-wrapper">
+  <div class="gallery-header">
+    <h1 class="anime-title">My Collection</h1>
+    <p class="subtitle">Your saved anime highlights</p>
+  </div>
+
+  <div class="grid" *ngIf="favoriteImages.length > 0">
+    <div class="item" *ngFor="let img of favoriteImages">
+      <div class="image-container">
+        <img [src]="img" alt="Saved Artwork">
+        <button class="remove-btn" (click)="removeFavorite(img)">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="favoriteImages.length === 0" class="empty-state">
+    <i class="fas fa-heart-broken"></i>
+    <h2>Your gallery is empty!</h2>
+    <p>Go to the main gallery to add some favorites.</p>
+    <button class="btn-back" [routerLink]="['/gallery']">Browse Gallery</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

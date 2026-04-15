@@ -12,6 +12,10 @@
   <div class="grid">
     <div class="item" *ngFor="let img of images">
       <img [src]="img" alt="Artwork" (click)="openLightbox(img)" style="cursor: zoom-in;">
+
+      <button class="heart-btn" (click)="toggleFavorite(img); $event.stopPropagation()">
+        <i [class]="isFavorite(img) ? 'fas fa-heart active' : 'far fa-heart'"></i>
+      </button>
     </div>
   </div>
 </div>

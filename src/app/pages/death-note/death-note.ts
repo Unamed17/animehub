@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './death-note.css'
 })
 export class DeathNote {
-  title = "Attack on Titan";
+  title = "Death Note";
   images = [
     "./images/Death note/1.jpg", 
     "./images/Death note/2.jpg", 
@@ -34,4 +34,27 @@ export class DeathNote {
   closeLightbox() {
     this.selectedImage = null;
   }
+
+  favorites: string[] = [];
+
+ngOnInit() {
+  
+  const saved = localStorage.getItem('myFavorites');
+  this.favorites = saved ? JSON.parse(saved) : [];
+}
+
+toggleFavorite(img: string) {
+  const index = this.favorites.indexOf(img);
+  if (index > -1) {
+    this.favorites.splice(index, 1);
+  } else {
+    this.favorites.push(img);
+  }
+  
+  localStorage.setItem('myFavorites', JSON.stringify(this.favorites));
+}
+
+isFavorite(img: string): boolean {
+  return this.favorites.includes(img);
+}
 }
